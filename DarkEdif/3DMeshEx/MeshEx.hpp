@@ -52,9 +52,9 @@ typedef std::uint16_t ushort, word, uint16;
 // 32-bit, signed integer
 typedef std::int32_t int32;
 // 32-bit, unsigned integer
-typedef unsigned long ulong;
+typedef unsigned long ulong, dword;
 // 32-bit, unsigned integer
-typedef std::uint32_t uint32, dword;
+typedef std::uint32_t uint32;
 // 64-bit, unsigned integer
 typedef std::uint64_t uint64;
 // 64-bit, signed integer
