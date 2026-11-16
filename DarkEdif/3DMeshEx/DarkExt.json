@@ -1,0 +1,1165 @@
+{
+	// 4-character identifer that uniquely identifies your extension.
+	// Can be letters, numbers, or punctuation, but must be 4 ASCII characters.
+	"Identifier": "3DMX",
+	"Dependencies": [ "" ],
+	"UsesImageFilters": true,
+	"UK English": {
+		"About": {
+			"Name": "3D Mesh Ex",
+			"Author": "Nassic :)",
+			"Comment": "A modern alternative to the 3D Mesh object (\u00A9 Erik G.) to render .obj/.fbx meshes in your Fusion applications.\nRequires HWA runtime (D3D9/11). (v1.0)",
+			"Copyright": "Copyright \u00A9 2026 Nasir 'Nassic' W.",
+			"Help": "Help/3D Mesh Ex/3DMeshEx.html",
+			"URL": "https://community.clickteam.com/user/36199-nasirfoxx/"
+		},
+		"ActionMenu": [
+			[ 0, "Set object size" ],
+			"---",
+			[
+				"Mesh",
+				[ 1, "Load mesh" ],
+				[ 2, "Replace texture" ],
+				"---",
+				[ 3, "Set yaw" ],
+				[ 4, "Set pitch" ],
+				[ 5, "Set roll" ],
+				"---",
+				[ 6, "Set X scale" ],
+				[ 7, "Set Y scale" ],
+				[ 8, "Set Z scale" ],
+				"---",
+				[ 9, "Set texture filtering" ],
+				[ 10, "Set UV address mode" ],
+				"---",
+				[ 11, "Set wireframe flag" ],
+				[ 12, "Set cull mode" ],
+				"---",
+				[
+					"Subsets",
+					[ 13, "Set X position" ],
+					[ 14, "Set Y position" ],
+					[ 15, "Set Z position" ],
+					"---",
+					[ 16, "Set yaw" ],
+					[ 17, "Set pitch" ],
+					[ 18, "Set roll" ],
+					"---",
+					[ 19, "Set X scale" ],
+					[ 20, "Set Y scale" ],
+					[ 21, "Set Z scale" ],
+					"---",
+					[ 47, "Set bounding box (AABB) radius" ]
+				]
+			],
+			[
+				"Animation",
+				[ 22, "Play" ],
+				[ 23, "Stop" ],
+				"---",
+				[ 24, "Set looping" ],
+				[ 25, "Set frame interpolation mode" ],
+				"---",
+				[ 26, "Set animation" ],
+				[ 27, "Set speed" ],
+				[ 46, "Set interpolation speed" ],
+				[ 28, "Set frame" ]
+			],
+			[
+				"Lighting",
+				[ 29, "Set ambient color" ],
+				[ 30, "Set diffuse color" ],
+				[ 31, "Set fog color" ],
+				"---",
+				[ 32, "Set X direction" ],
+				[ 33, "Set Y direction" ],
+				[ 34, "Set Z direction" ],
+				"---",
+				[ 35, "Set fog distance" ]
+			],
+			[
+				"Camera",
+				[ 36, "Set projection type" ],
+				"---",
+				[ 37, "Set field of view" ],
+				[ 38, "Set near clip plane" ],
+				[ 39, "Set far clip plane" ],
+				"---",
+				[ 40, "Set X position" ],
+				[ 41, "Set Y position" ],
+				[ 42, "Set Z position" ],
+				"---",
+				[ 43, "Set yaw" ],
+				[ 44, "Set pitch" ],
+				[ 45, "Set roll" ]
+			]
+		],
+		"ConditionMenu": [
+			[ 0, "On mesh pre-update" ],
+			[ 1, "On mesh post-update" ],
+			"---",
+			[ 2, "On mesh pre-draw" ],
+			[ 3, "On mesh post-draw" ],
+			"---",
+			[
+				"Mesh",
+				[ 4, "Is a mesh loaded?" ],
+				"---",
+				[ 5, "Using Point texture-filtering?" ],
+				[ 6, "Using Bilinear texture-filtering?" ],
+				"---",
+				[ 7, "Using Wrap UV address mode?" ],
+				[ 8, "Using Clamp UV address mode?" ],
+				"---",
+				[ 9, "Is wireframe?" ],
+				"---",
+				[ 10, "Using back-face culling?" ],
+				[ 11, "Using front-face culling?" ],
+				[ 12, "Using no culling?" ]
+			],
+			[
+				"Animation",
+				[ 13, "Is looping enabled?" ],
+				"---",
+				[ 14, "Using \"Always\" frame interpolation?" ],
+				[ 15, "Using \"Sometimes\" frame interpolation?" ],
+				[ 16, "Using \"Never\" frame interpolation?" ]
+			],
+			[
+				"Camera",
+				[ 17, "Using perspective projection?" ]
+			]
+		],
+		"ExpressionMenu": [
+			[ 0, "Get object width" ],
+			[ 1, "Get object height" ],
+			"---",
+			[
+				"Mesh",
+				[ 50, "Get filename" ],
+				"---",
+				[ 2, "Get yaw" ],
+				[ 3, "Get pitch" ],
+				[ 4, "Get roll" ],
+				"---",
+				[ 5, "Get X scale" ],
+				[ 6, "Get Y scale" ],
+				[ 7, "Get Z scale" ],
+				"---",
+				[
+					"Subsets",
+					[ 8, "Get X position" ],
+					[ 9, "Get Y position" ],
+					[ 10, "Get Z position" ],
+					"---",
+					[ 11, "Get yaw" ],
+					[ 12, "Get pitch" ],
+					[ 13, "Get roll" ],
+					"---",
+					[ 14, "Get X scale" ],
+					[ 15, "Get Y scale" ],
+					[ 16, "Get Z scale" ],
+					"---",
+					[ 49, "Get bounding box (AABB) radius" ],
+					"---",
+					[ 17, "Get number of subsets" ],
+					[ 18, "Get subset index" ],
+					[ 19, "Get subset name" ]
+				]
+			],
+			[
+				"Animation",
+				[ 20, "Get current animation index" ],
+				[ 21, "Get animation speed" ],
+				[ 48, "Get animation interpolation speed" ],
+				[ 22, "Get current animation frame" ],
+				"---",
+				[ 23, "Get number of animations" ],
+				[ 24, "Get animation index" ],
+				[ 25, "Get animation name" ],
+				[ 26, "Get animation frame rate" ],
+				"---",
+				[ 27, "Get number of bones" ],
+				[ 28, "Get bone index" ],
+				[ 29, "Get bone name" ],
+				[ 30, "Get projected bone X position" ],
+				[ 31, "Get projected bone Y position" ]
+			],
+			[
+				"Lighting",
+				[ 32, "Get ambient color" ],
+				[ 33, "Get diffuse color" ],
+				[ 34, "Get fog color" ],
+				"---",
+				[ 35, "Get X direction" ],
+				[ 36, "Get Y direction" ],
+				[ 37, "Get Z direction" ],
+				"---",
+				[ 38, "Get fog distance" ]
+			],
+			[
+				"Camera",
+				[ 39, "Get field of view" ],
+				[ 40, "Get near clip plane" ],
+				[ 41, "Get far clip plane" ],
+				"---",
+				[ 42, "Get X position" ],
+				[ 43, "Get Y position" ],
+				[ 44, "Get Z position" ],
+				"---",
+				[ 45, "Get yaw" ],
+				[ 46, "Get pitch" ],
+				[ 47, "Get roll" ]
+			]
+		],
+		"Actions": [
+			{
+				"Title": "Set object size to (%0 x %1)",
+				"Parameters": [
+					[ "Integer", "Width" ],
+					[ "Integer", "Height" ]
+				]
+			},
+			{
+				"Title": "Load mesh %0",
+				"Parameters": [
+					[ "Filename", "Mesh path" ]
+				]
+			},
+			{
+				"Title": "Replace texture #%0 with %1",
+				"Parameters": [
+					[ "Integer", "Texture index (0-based)" ],
+					[ "Filename", "New texture file" ]
+				]
+			},
+			{
+				"Title": "Set yaw to %0",
+				"Parameters": [
+					[ "Float", "Yaw (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set pitch to %0",
+				"Parameters": [
+					[ "Float", "Pitch (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set roll to %0",
+				"Parameters": [
+					[ "Float", "Roll (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set X scale to %0",
+				"Parameters": [
+					[ "Float", "X scale" ]
+				]
+			},
+			{
+				"Title": "Set Y scale to %0",
+				"Parameters": [
+					[ "Float", "Y scale" ]
+				]
+			},
+			{
+				"Title": "Set Z scale to %0",
+				"Parameters": [
+					[ "Float", "Z scale" ]
+				]
+			},
+			{
+				"Title": "Set texture filtering to %0",
+				"Parameters": [
+					[ "Integer", "0 = point, 1 = bilinear" ]
+				]
+			},
+			{
+				"Title": "Set UV addressing to %0",
+				"Parameters": [
+					[ "Integer", "0 = wrap, 1 = clamp" ]
+				]
+			},
+			{
+				"Title": "Set wireframe to %0",
+				"Parameters": [
+					[ "Integer", "0 = no wireframe, 1 = wireframe" ]
+				]
+			},
+			{
+				"Title": "Set cull mode to %0",
+				"Parameters": [
+					[ "Integer", "0 = back, 1 = front, 2 = none" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's X position to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "X position" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's Y position to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "Y position" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's Z position to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "Z position" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's yaw to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "Yaw (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's pitch to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "Pitch (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's roll to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "Roll (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's X scale to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "X scale" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's Y scale to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "Y scale" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's Z scale to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "Z scale" ]
+				]
+			},
+			{
+				"Title": "Play animation"
+			},
+			{
+				"Title": "Stop animation"
+			},
+			{
+				"Title": "Set animation looping to %0",
+				"Parameters": [
+					[ "Integer", "0 = no loop, 1 = loop" ]
+				]
+			},
+			{
+				"Title": "Set frame interpolation mode to %0",
+				"Parameters": [
+					[ "Integer", "0 = always, 1 = sometimes, 2 = never" ]
+				]
+			},
+			{
+				"Title": "Set animation to %0",
+				"Parameters": [
+					[ "Integer", "Animation index (0-based)" ]
+				]
+			},
+			{
+				"Title": "Set animation speed to %0",
+				"Parameters": [
+					[ "Float", "Animation speed (base = 1.0)" ]
+				]
+			},
+			{
+				"Title": "Set animation frame to %0",
+				"Parameters": [
+					[ "Float", "Animation frame (accepts decimal points)" ]
+				]
+			},
+			{
+				"Title": "Set ambient color to %0",
+				"Parameters": [
+					[ "Color", "Ambient color" ]
+				]
+			},
+			{
+				"Title": "Set diffuse color to %0",
+				"Parameters": [
+					[ "Color", "Diffuse color" ]
+				]
+			},
+			{
+				"Title": "Set fog color to %0",
+				"Parameters": [
+					[ "Color", "Fog color" ]
+				]
+			},
+			{
+				"Title": "Set light X direction to %0",
+				"Parameters": [
+					[ "Float", "X direction (ranges from -1.0:1.0)" ]
+				]
+			},
+			{
+				"Title": "Set light Y direction to %0",
+				"Parameters": [
+					[ "Float", "Y direction (ranges from -1.0:1.0)" ]
+				]
+			},
+			{
+				"Title": "Set light Z direction to %0",
+				"Parameters": [
+					[ "Float", "Z direction (ranges from -1.0:1.0)" ]
+				]
+			},
+			{
+				"Title": "Set fog distance to %0",
+				"Parameters": [
+					[ "Float", "Fog distance (should be a positive value)" ]
+				]
+			},
+			{
+				"Title": "Set projection type to %0",
+				"Parameters": [
+					[ "Integer", "0 = perspective, 1 = orthographic" ]
+				]
+			},
+			{
+				"Title": "Set field of view to %0",
+				"Parameters": [
+					[ "Float", "Field of view (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set near clip plane to %0",
+				"Parameters": [
+					[ "Float", "Near clip plane (must be greater than 0.0)" ]
+				]
+			},
+			{
+				"Title": "Set far clip plane to %0",
+				"Parameters": [
+					[ "Float", "Far clip plane (must be greater than 0.0)" ]
+				]
+			},
+			{
+				"Title": "Set camera X position to %0",
+				"Parameters": [
+					[ "Float", "X position" ]
+				]
+			},
+			{
+				"Title": "Set camera Y position to %0",
+				"Parameters": [
+					[ "Float", "Y position" ]
+				]
+			},
+			{
+				"Title": "Set camera Z position to %0",
+				"Parameters": [
+					[ "Float", "Z position" ]
+				]
+			},
+			{
+				"Title": "Set camera yaw to %0",
+				"Parameters": [
+					[ "Float", "Yaw (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set camera pitch to %0",
+				"Parameters": [
+					[ "Float", "Pitch (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set camera roll to %0",
+				"Parameters": [
+					[ "Float", "Roll (degrees)" ]
+				]
+			},
+			{
+				"Title": "Set animation interpolation speed to %0",
+				"Parameters": [
+					[ "Float", "Interpolation speed (must be a positive number ranging from 0.0-1.0)" ]
+				]
+			},
+			{
+				"Title": "Set subset #%0's bounding box radius to %1",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ],
+					[ "Float", "Radius (default: 1.0)" ]
+				]
+			},
+		],
+		"Conditions": [
+			{
+				"Title": "%o : On mesh pre-update",
+				"Triggered": true
+			},
+			{
+				"Title": "%o : On mesh post-update",
+				"Triggered": true
+			},
+			{
+				"Title": "%o : On mesh pre-draw",
+				"Triggered": true
+			},
+			{
+				"Title": "%o : On mesh post-draw",
+				"Triggered": true
+			},
+
+			{
+				"Title": "%o : Has a mesh loaded",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using \"Point\" texture filtering?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using \"Bilinear\" texture filtering?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using \"Wrap\" UV addressing?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using \"Clamp\" UV addressing?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Is wireframe?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using back-face culling?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using front-face culling?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using no culling?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Animation loop is enabled?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using \"Always\" frame interpolation?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using \"Sometimes\" frame interpolation?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using \"Never\" frame interpolation?",
+				"Triggered": false
+			},
+			{
+				"Title": "%o : Using perspective projection?",
+				"Triggered": false
+			}
+		],
+		"Expressions": [
+			{
+				"Title": "Width(",
+				"Returns": "Integer"
+			},
+			{
+				"Title": "Height(",
+				"Returns": "Integer"
+			},
+			{
+				"Title": "Yaw(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "Pitch(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "Roll(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "XScale(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "YScale(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "ZScale(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "SubsetXPosition(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "SubsetYPosition(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "SubsetZPosition(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "SubsetYaw(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "SubsetPitch(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "SubsetRoll(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "SubsetXScale(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "SubsetYScale(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "SubsetZScale(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "NSubsets(",
+				"Returns": "Integer"
+			},
+			{
+				"Title": "SubsetIndex(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Text", "Subset name" ]
+				]
+			},
+			{
+				"Title": "SubsetName(",
+				"Returns": "Text",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "CurrentAnimationIndex(",
+				"Returns": "Integer"
+			},
+			{
+				"Title": "AnimationSpeed(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "CurrentAnimationFrame(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "NAnimations(",
+				"Returns": "Integer"
+			},
+			{
+				"Title": "AnimationIndex(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Text", "Animation name" ]
+				]
+			},
+			{
+				"Title": "AnimationName(",
+				"Returns": "Text",
+				"Parameters": [
+					[ "Integer", "Animation index (0-based)" ]
+				]
+			},
+			{
+				"Title": "AnimationFPS(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "NBones(",
+				"Returns": "Integer"
+			},
+			{
+				"Title": "BoneIndex(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Text", "Bone name" ]
+				]
+			},
+			{
+				"Title": "BoneName(",
+				"Returns": "Text",
+				"Parameters": [
+					[ "Integer", "Bone index (0-based)" ]
+				]
+			},
+			{
+				"Title": "ProjBoneXPosition(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Bone index (0-based)" ],
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "ProjBoneYPosition(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Bone index (0-based)" ],
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "AmbientColor(",
+				"Returns": "Integer"
+			},
+			{
+				"Title": "DiffuseColor(",
+				"Returns": "Integer"
+			},
+			{
+				"Title": "FogColor(",
+				"Returns": "Integer"
+			},
+			{
+				"Title": "LightDirectionX(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "LightDirectionY(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "LightDirectionZ(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "FogDistance(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "FOV(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "NearClip(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "FarClip(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "CameraXPosition(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "CameraYPosition(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "CameraZPosition(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "CameraYaw(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "CameraPitch(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "CameraRoll(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "AnimationInterpolationSpeed(",
+				"Returns": "Float"
+			},
+			{
+				"Title": "SubsetAABBRadius(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Subset index (0-based)" ]
+				]
+			},
+			{
+				"Title": "MeshFileName(",
+				"Returns": "Text"
+			}
+		],
+		"Properties": [
+			{
+				"Title": "Mesh",
+				"Info": "Properties relating to the mesh.",
+				"Type": "Folder"
+			},
+			{
+				"Title": "Mesh File",
+				"Type": "Editbox File",
+				"Info": "File path of the mesh to load. Non-absolute paths will be relative to the MFA/EXE.",
+				"Filters": [
+					[
+						"Wavefront OBJ files",
+						"*.obj"
+					],
+					[
+						"Autodesk FBX files",
+						[ "*.fbx" ]
+					],
+					[
+						"All files",
+						[ "*.*" ]
+					]
+				],
+				"DefaultState": ""
+			},
+			{
+
+				"Title": "Texture List",
+				"Type": "Image List",
+				"Info": "The mesh will load these textures based on their frame number; e.g if your mesh uses the first texture defined in the mesh file, that will use Frame 1 in this texture list.",
+				"MaxNumImages": 16,
+				"NumImages": 1,
+				"FixedImageSize": false,
+				"AllowEmpty": false,
+				"ImageSize": [ 128, 128 ],
+				"WindowTitle": "Mesh Textures",
+				"HotSpotAndActionPoint": false
+			},
+			{
+				"Title": "Rotation",
+				"Type": "Group",
+				"Info": "Rotation properties of the mesh.\nNote that the rotation order is yaw->pitch->roll."
+			},
+			{
+				"Title": "Yaw",
+				"Type": "Editbox Float",
+				"Info": "The mesh's yaw, in degrees.",
+				"DefaultState": 0.0
+			},
+			{
+				"Title": "Pitch",
+				"Type": "Editbox Float",
+				"Info": "The mesh's pitch, in degrees.",
+				"DefaultState": 0.0
+			},
+			{
+				"Title": "Roll",
+				"Type": "Editbox Float",
+				"Info": "The mesh's roll, in degrees.",
+				"DefaultState": 0.0
+			},
+			{
+				"Title": "Scale",
+				"Type": "Group",
+				"Info": "Scale properties of the mesh."
+			},
+			{
+				"Title": "X Scale",
+				"Type": "Editbox Float",
+				"Info": "X scale of the mesh.",
+				"DefaultState": 1.0
+			},
+			{
+				"Title": "Y Scale",
+				"Type": "Editbox Float",
+				"Info": "Y scale of the mesh.",
+				"DefaultState": 1.0
+			},
+			{
+				"Title": "Z Scale",
+				"Type": "Editbox Float",
+				"Info": "Z scale of the mesh.",
+				"DefaultState": 1.0
+			},
+			{
+				"Title": "Shading",
+				"Type": "Group",
+				"Info": "Shading properties of the mesh."
+			},
+			{
+				"Title": "Texture Filtering",
+				"Type": "Combo Box",
+				"Info": "Determines what filtering textures should use.\nPoint filtering makes textures pixelated whereas bilinear filtering results in anti-aliasing (blurring).",
+				"DefaultState": "Bilinear",
+				"Items": [ "Point", "Bilinear" ]
+			},
+			{
+				"Title": "UV Address Mode",
+				"Type": "Combo Box",
+				"Info": "Determines what to do with texture coordinates that go outside the texture's bounds.",
+				"DefaultState": "Wrap",
+				"Items": [ "Wrap", "Clamp" ]
+			},
+			{
+				"Title": "Rasterization",
+				"Type": "Group",
+				"Info": "Rasterization properties of the mesh."
+			},
+			{
+				"Title": "Wireframe",
+				"Type": "Checkbox",
+				"Info": "Draws triangles as lines rather than filled in.",
+				"DefaultState": false
+			},
+			{
+				"Title": "Cull Mode",
+				"Type": "Combo Box",
+				"Info": "How triangle winding-order should be treated.",
+				"DefaultState": "Back-face",
+				"Items": [ "Back-face", "Front-face", "None" ]
+			},
+			{ "Type": "FolderEnd" },
+
+			{
+				"Title": "Animation",
+				"Info": "Properties relating to mesh animation.",
+				"Type": "Folder"
+			},
+			{
+				"Title": "Loop",
+				"Type": "Checkbox",
+				"Info": "Whether or not to loop the animation.",
+				"DefaultState": true
+			},
+			{
+				"Title": "Frame Interpolation",
+				"Type": "Combo Box",
+				"Info": "How bones should be interpolated during animation playback.",
+				"DefaultState": "Always",
+				"Items": [ "Always", "Sometimes", "Never" ]
+			},
+			{
+				"Title": "Speed",
+				"Type": "Editbox Float",
+				"Info": "Multiplication factor influencing the speed of the animation.",
+				"DefaultState": 1.0
+			},
+			{
+				"Title": "Interpolation Speed",
+				"Type": "Editbox Float",
+				"Info": "Speed of the interpolation when switching animations. Only used with \"Always\" interpolation. Must be within the range of 0.0-1.0.",
+				"Minimum": 0.0,
+				"Maximum": 1.0,
+				"DefaultState": 0.2
+			},
+			{ "Type": "FolderEnd" },
+
+			{
+				"Title": "Lighting",
+				"Info": "Properties relating to lighting.",
+				"Type": "Folder"
+			},
+			{
+				"Title": "Color",
+				"Type": "Group",
+				"Info": "Properties relating to light colors."
+			},
+			{
+				"Title": "Ambient Color",
+				"Type": "Color",
+				"Info": "Ambient color of the directional light.",
+				"DefaultState": 2631720
+			},
+			{
+				"Title": "Diffuse Color",
+				"Type": "Color",
+				"Info": "Diffuse color of the directional light.",
+				"DefaultState": 13948116
+			},
+			{
+				"Title": "Fog Color",
+				"Type": "Color",
+				"Info": "Color of the fog.",
+				"DefaultState": 0
+			},
+			{
+				"Title": "Direction",
+				"Type": "Group",
+				"Info": "Properties relating to light direction."
+			},
+			{
+				"Title": "X Direction",
+				"Type": "Editbox Float",
+				"Info": "X direction of the directional light.\nIdeally should range from -1.0:1.0.",
+				"DefaultState": 0.0
+			},
+			{
+				"Title": "Y Direction",
+				"Type": "Editbox Float",
+				"Info": "Y direction of the directional light.\nIdeally should range from -1.0:1.0.",
+				"DefaultState": -1.0
+			},
+			{
+				"Title": "Z Direction",
+				"Type": "Editbox Float",
+				"Info": "Z direction of the directional light.\nIdeally should range from -1.0:1.0.",
+				"DefaultState": 0.0
+			},
+			{
+				"Title": "Fog",
+				"Type": "Group",
+				"Info": "Properties relating to fog."
+			},
+			{
+				"Title": "Fog Distance",
+				"Type": "Editbox Float",
+				"Info": "Distance at which fog begins to appear.",
+				"DefaultState": 1000.0
+			},
+			{ "Type": "FolderEnd" },
+
+			{
+				"Title": "Camera",
+				"Info": "Properties relating to the camera.",
+				"Type": "Folder"
+			},
+			{
+				"Title": "Projection",
+				"Info": "Projection properties of the camera frustum.",
+				"Type": "Group"
+			},
+			{
+				"Title": "Projection Type",
+				"Type": "Combo Box",
+				"Info": "The type of projection to use for the camera.",
+				"DefaultState": "Perspective",
+				"Items": [ "Perspective", "Orthographic" ]
+			},
+			{
+				"Title": "Frustum",
+				"Info": "Properties of the camera frustum.",
+				"Type": "Group"
+			},
+			{
+				"Title": "Field of View",
+				"Type": "Editbox Float",
+				"Info": "Field of view (FOV) of the camera, in degrees.",
+				"DefaultState": 70.0
+			},
+			{
+				"Title": "Near Clip Plane",
+				"Type": "Editbox Float",
+				"Info": "Near clipping plane of the camera frustum.",
+				"DefaultState": 0.1
+			},
+			{
+				"Title": "Far Clip Plane",
+				"Type": "Editbox Float",
+				"Info": "Far clipping plane of the camera frustum.",
+				"DefaultState": 100.0
+			},
+			{
+				"Title": "Position ",
+				"Info": "Position properties of the camera.",
+				"Type": "Group"
+			},
+			{
+				"Title": "X Position",
+				"Type": "Editbox Float",
+				"Info": "X position of the camera.",
+				"DefaultState": 0.0
+			},
+			{
+				"Title": "Y Position",
+				"Type": "Editbox Float",
+				"Info": "Y position of the camera.",
+				"DefaultState": 0.0
+			},
+			{
+				"Title": "Z Position",
+				"Type": "Editbox Float",
+				"Info": "Z position of the camera.",
+				"DefaultState": -5.0
+			},
+			{
+				"Title": "Rotation ",
+				"Info": "Rotation properties of the camera.",
+				"Type": "Group"
+			},
+			{
+				"Title": "Yaw ",
+				"Type": "Editbox Float",
+				"Info": "The camera's yaw, in degrees.",
+				"DefaultState": 0.0
+			},
+			{
+				"Title": "Pitch ",
+				"Type": "Editbox Float",
+				"Info": "The camera's pitch, in degrees.",
+				"DefaultState": 0.0
+			},
+			{
+				"Title": "Roll ",
+				"Type": "Editbox Float",
+				"Info": "The camera's roll, in degrees.",
+				"DefaultState": 0.0
+			},
+			{ "Type": "FolderEnd" },
+			{
+				"Title": "Display in editor",
+				"Type": "Checkbox",
+				"Info": "If unchecked, the mesh is not rendered in the frame editor. Disable this if your mesh is too intensive and slows down the Fusion editor.",
+				"DefaultState": true
+			}
+		]
+	}
+}

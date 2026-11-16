@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Unicode|Win32">
+      <Configuration>Debug Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Edittime Unicode|Win32">
+      <Configuration>Edittime Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Edittime|Win32">
+      <Configuration>Edittime</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Runtime Unicode|Win32">
+      <Configuration>Runtime Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Runtime|Win32">
+      <Configuration>Runtime</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{d092e201-f2c2-48c2-9776-229032f5e60d}</ProjectGuid>
+    <ProjectName>3DMeshEx.Windows</ProjectName>
+    <TargetName>3DMeshEx</TargetName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <Target Name="MissingFusionSDKProps" BeforeTargets="Build">
+    <Error Condition="!exists('..\Lib\FusionSDK.props')" Text="Missing Fusion SDK property sheet &quot;..\Lib\FusionSDK.props&quot;." />
+    <Error Condition="!exists('..\Lib\FusionSDK_AfterMSPropSheets.props')" Text="Missing Fusion SDK property sheet &quot;..\Lib\FusionSDK_AfterMSPropSheets.props&quot;." />
+  </Target>
+  <Import Project="..\Lib\FusionSDK.props" Condition="exists('..\Lib\FusionSDK.props')" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+    <Import Project="3DMeshEx.Shared.vcxitems" Label="Shared" />
+  </ImportGroup>
+  <Import Project="..\Lib\FusionSDK_AfterMSPropSheets.props" Condition="exists('..\Lib\FusionSDK_AfterMSPropSheets.props')" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildAfterTargets>FxCompile</CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
+    <CustomBuildAfterTargets>FxCompile</CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">
+    <CustomBuildAfterTargets>FxCompile</CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">
+    <CustomBuildAfterTargets>FxCompile</CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">
+    <CustomBuildAfterTargets>FxCompile</CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">
+    <CustomBuildAfterTargets>FxCompile</CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
+    <Link>
+      <OutputFile>C:\Program Files (x86)\Steam\steamapps\common\Clickteam Fusion 2.5\Extensions\Unicode\$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>Shlwapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <PreprocessorDefinitions>FUSION_INTERNAL_ACCESS;FUSION_DIRECT3D_9_INTERNALS;FUSION_DIRECT3D_11_INTERNALS;UFBX_REAL_IS_FLOAT;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <CustomBuildStep>
+      <Message>Compiling Shaders!</Message>
+      <Command>"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Static.cso" "$(ProjectDir)Shaders\D3D9\C\Static.h" staticVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D9\C\Skinned.h" skinnedVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D9\C\Texture.h" texturePSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D9\C\Colored.h" coloredPSBytes9
+
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Static.cso" "$(ProjectDir)Shaders\D3D11\C\Static.h" staticVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D11\C\Skinned.h" skinnedVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D11\C\Texture.h" texturePSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D11\C\Colored.h" coloredPSBytes11</Command>
+      <Outputs>$(ProjectDir)Shaders\D3D9\C\Static.h;$(ProjectDir)Shaders\D3D9\C\Skinned.h;$(ProjectDir)Shaders\D3D9\C\Texture.h;$(ProjectDir)Shaders\D3D9\C\Colored.h;$(ProjectDir)Shaders\D3D11\C\Static.h;$(ProjectDir)Shaders\D3D11\C\Skinned.h;$(ProjectDir)Shaders\D3D11\C\Texture.h;$(ProjectDir)Shaders\D3D11\C\Colored.h;%(Outputs)</Outputs>
+      <Inputs>$(ProjectDir)Shaders\D3D9\CSO\Static.cso;$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D9\CSO\Texture.cso;$(ProjectDir)Shaders\D3D9\CSO\Colored.cso;$(ProjectDir)Shaders\D3D11\CSO\Static.cso;$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D11\CSO\Texture.cso;$(ProjectDir)Shaders\D3D11\CSO\Colored.cso;%(Inputs)</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>FUSION_INTERNAL_ACCESS;FUSION_DIRECT3D_9_INTERNALS;FUSION_DIRECT3D_11_INTERNALS;UFBX_REAL_IS_FLOAT;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <CustomBuildStep>
+      <Message>Compiling Shaders!</Message>
+      <Command>"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Static.cso" "$(ProjectDir)Shaders\D3D9\C\Static.h" staticVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D9\C\Skinned.h" skinnedVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D9\C\Texture.h" texturePSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D9\C\Colored.h" coloredPSBytes9
+
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Static.cso" "$(ProjectDir)Shaders\D3D11\C\Static.h" staticVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D11\C\Skinned.h" skinnedVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D11\C\Texture.h" texturePSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D11\C\Colored.h" coloredPSBytes11</Command>
+      <Outputs>$(ProjectDir)Shaders\D3D9\C\Static.h;$(ProjectDir)Shaders\D3D9\C\Skinned.h;$(ProjectDir)Shaders\D3D9\C\Texture.h;$(ProjectDir)Shaders\D3D9\C\Colored.h;$(ProjectDir)Shaders\D3D11\C\Static.h;$(ProjectDir)Shaders\D3D11\C\Skinned.h;$(ProjectDir)Shaders\D3D11\C\Texture.h;$(ProjectDir)Shaders\D3D11\C\Colored.h;%(Outputs)</Outputs>
+      <Inputs>$(ProjectDir)Shaders\D3D9\CSO\Static.cso;$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D9\CSO\Texture.cso;$(ProjectDir)Shaders\D3D9\CSO\Colored.cso;$(ProjectDir)Shaders\D3D11\CSO\Static.cso;$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D11\CSO\Texture.cso;$(ProjectDir)Shaders\D3D11\CSO\Colored.cso;%(Inputs)</Inputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalDependencies>Shlwapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>FUSION_INTERNAL_ACCESS;FUSION_DIRECT3D_9_INTERNALS;FUSION_DIRECT3D_11_INTERNALS;UFBX_REAL_IS_FLOAT;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <CustomBuildStep>
+      <Message>Compiling Shaders!</Message>
+      <Command>"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Static.cso" "$(ProjectDir)Shaders\D3D9\C\Static.h" staticVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D9\C\Skinned.h" skinnedVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D9\C\Texture.h" texturePSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D9\C\Colored.h" coloredPSBytes9
+
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Static.cso" "$(ProjectDir)Shaders\D3D11\C\Static.h" staticVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D11\C\Skinned.h" skinnedVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D11\C\Texture.h" texturePSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D11\C\Colored.h" coloredPSBytes11</Command>
+      <Outputs>$(ProjectDir)Shaders\D3D9\C\Static.h;$(ProjectDir)Shaders\D3D9\C\Skinned.h;$(ProjectDir)Shaders\D3D9\C\Texture.h;$(ProjectDir)Shaders\D3D9\C\Colored.h;$(ProjectDir)Shaders\D3D11\C\Static.h;$(ProjectDir)Shaders\D3D11\C\Skinned.h;$(ProjectDir)Shaders\D3D11\C\Texture.h;$(ProjectDir)Shaders\D3D11\C\Colored.h;%(Outputs)</Outputs>
+      <Inputs>$(ProjectDir)Shaders\D3D9\CSO\Static.cso;$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D9\CSO\Texture.cso;$(ProjectDir)Shaders\D3D9\CSO\Colored.cso;$(ProjectDir)Shaders\D3D11\CSO\Static.cso;$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D11\CSO\Texture.cso;$(ProjectDir)Shaders\D3D11\CSO\Colored.cso;%(Inputs)</Inputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalDependencies>Shlwapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>FUSION_INTERNAL_ACCESS;FUSION_DIRECT3D_9_INTERNALS;FUSION_DIRECT3D_11_INTERNALS;UFBX_REAL_IS_FLOAT;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <CustomBuildStep>
+      <Message>Compiling Shaders!</Message>
+      <Command>"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Static.cso" "$(ProjectDir)Shaders\D3D9\C\Static.h" staticVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D9\C\Skinned.h" skinnedVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D9\C\Texture.h" texturePSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D9\C\Colored.h" coloredPSBytes9
+
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Static.cso" "$(ProjectDir)Shaders\D3D11\C\Static.h" staticVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D11\C\Skinned.h" skinnedVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D11\C\Texture.h" texturePSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D11\C\Colored.h" coloredPSBytes11</Command>
+      <Outputs>$(ProjectDir)Shaders\D3D9\C\Static.h;$(ProjectDir)Shaders\D3D9\C\Skinned.h;$(ProjectDir)Shaders\D3D9\C\Texture.h;$(ProjectDir)Shaders\D3D9\C\Colored.h;$(ProjectDir)Shaders\D3D11\C\Static.h;$(ProjectDir)Shaders\D3D11\C\Skinned.h;$(ProjectDir)Shaders\D3D11\C\Texture.h;$(ProjectDir)Shaders\D3D11\C\Colored.h;%(Outputs)</Outputs>
+      <Inputs>$(ProjectDir)Shaders\D3D9\CSO\Static.cso;$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D9\CSO\Texture.cso;$(ProjectDir)Shaders\D3D9\CSO\Colored.cso;$(ProjectDir)Shaders\D3D11\CSO\Static.cso;$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D11\CSO\Texture.cso;$(ProjectDir)Shaders\D3D11\CSO\Colored.cso;%(Inputs)</Inputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalDependencies>Shlwapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>FUSION_INTERNAL_ACCESS;FUSION_DIRECT3D_9_INTERNALS;FUSION_DIRECT3D_11_INTERNALS;UFBX_REAL_IS_FLOAT;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <CustomBuildStep>
+      <Message>Compiling Shaders!</Message>
+      <Command>"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Static.cso" "$(ProjectDir)Shaders\D3D9\C\Static.h" staticVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D9\C\Skinned.h" skinnedVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D9\C\Texture.h" texturePSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D9\C\Colored.h" coloredPSBytes9
+
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Static.cso" "$(ProjectDir)Shaders\D3D11\C\Static.h" staticVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D11\C\Skinned.h" skinnedVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D11\C\Texture.h" texturePSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D11\C\Colored.h" coloredPSBytes11</Command>
+      <Outputs>$(ProjectDir)Shaders\D3D9\C\Static.h;$(ProjectDir)Shaders\D3D9\C\Skinned.h;$(ProjectDir)Shaders\D3D9\C\Texture.h;$(ProjectDir)Shaders\D3D9\C\Colored.h;$(ProjectDir)Shaders\D3D11\C\Static.h;$(ProjectDir)Shaders\D3D11\C\Skinned.h;$(ProjectDir)Shaders\D3D11\C\Texture.h;$(ProjectDir)Shaders\D3D11\C\Colored.h;%(Outputs)</Outputs>
+      <Inputs>$(ProjectDir)Shaders\D3D9\CSO\Static.cso;$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D9\CSO\Texture.cso;$(ProjectDir)Shaders\D3D9\CSO\Colored.cso;$(ProjectDir)Shaders\D3D11\CSO\Static.cso;$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D11\CSO\Texture.cso;$(ProjectDir)Shaders\D3D11\CSO\Colored.cso;%(Inputs)</Inputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalDependencies>Shlwapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>FUSION_INTERNAL_ACCESS;FUSION_DIRECT3D_9_INTERNALS;FUSION_DIRECT3D_11_INTERNALS;UFBX_REAL_IS_FLOAT;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <CustomBuildStep>
+      <Message>Compiling Shaders!</Message>
+      <Command>"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Static.cso" "$(ProjectDir)Shaders\D3D9\C\Static.h" staticVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D9\C\Skinned.h" skinnedVSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D9\C\Texture.h" texturePSBytes9
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D9\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D9\C\Colored.h" coloredPSBytes9
+
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Static.cso" "$(ProjectDir)Shaders\D3D11\C\Static.h" staticVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso" "$(ProjectDir)Shaders\D3D11\C\Skinned.h" skinnedVSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Texture.cso" "$(ProjectDir)Shaders\D3D11\C\Texture.h" texturePSBytes11
+"$(ProjectDir)Utils\FileToHeader.exe" "$(ProjectDir)Shaders\D3D11\CSO\Colored.cso" "$(ProjectDir)Shaders\D3D11\C\Colored.h" coloredPSBytes11</Command>
+      <Outputs>$(ProjectDir)Shaders\D3D9\C\Static.h;$(ProjectDir)Shaders\D3D9\C\Skinned.h;$(ProjectDir)Shaders\D3D9\C\Texture.h;$(ProjectDir)Shaders\D3D9\C\Colored.h;$(ProjectDir)Shaders\D3D11\C\Static.h;$(ProjectDir)Shaders\D3D11\C\Skinned.h;$(ProjectDir)Shaders\D3D11\C\Texture.h;$(ProjectDir)Shaders\D3D11\C\Colored.h;%(Outputs)</Outputs>
+      <Inputs>$(ProjectDir)Shaders\D3D9\CSO\Static.cso;$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D9\CSO\Texture.cso;$(ProjectDir)Shaders\D3D9\CSO\Colored.cso;$(ProjectDir)Shaders\D3D11\CSO\Static.cso;$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso;$(ProjectDir)Shaders\D3D11\CSO\Texture.cso;$(ProjectDir)Shaders\D3D11\CSO\Colored.cso;%(Inputs)</Inputs>
+    </CustomBuildStep>
+    <Link>
+      <AdditionalDependencies>Shlwapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Lib\Windows\Edif.Edittime.cpp" />
+    <ClCompile Include="Edittime.cpp" />
+    <ClCompile Include="MeshExWin.cpp" />
+    <ClCompile Include="Runtime.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Inc\Windows\Props.hpp" />
+    <ClInclude Include="..\Inc\Windows\WindowsSurface.hpp" />
+    <ClInclude Include="..\Inc\Windows\WindowsDefines.hpp" />
+    <ClInclude Include="DarkExt.json">
+      <FileType>Document</FileType>
+    </ClInclude>
+    <None Include="Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Inc\Windows\MMFWindowsMasterHeader.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Ext.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\D3D11\Colored.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Colored.cso</ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="Shaders\D3D11\Skinned.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Skinned.cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">4.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shaders\D3D11\Static.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Static.cso</ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="Shaders\D3D11\Texture.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">$(ProjectDir)Shaders\D3D11\CSO\Texture.cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">4.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shaders\D3D9\Colored.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">3.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Colored.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Colored.cso</ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="Shaders\D3D9\Skinned.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">3.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Skinned.cso</ObjectFileOutput>
+      <FileType>Document</FileType>
+    </FxCompile>
+    <FxCompile Include="Shaders\D3D9\Static.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">3.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Static.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Static.cso</ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="Shaders\D3D9\Texture.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">3.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">3.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Edittime|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Texture.cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Shaders\D3D9\CSO\Texture.cso</ObjectFileOutput>
+    </FxCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
