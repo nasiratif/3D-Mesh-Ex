@@ -88,7 +88,7 @@ using namespace MeshEx;
 
 void D3D11CaptureState(ID3D11DeviceContext* d3d11Ctx, D3D11State* outState)
 {
-	memset(outState, 0x0, sizeof(*outState));
+	std::memset(outState, 0x0, sizeof(*outState));
 	d3d11Ctx->VSGetConstantBuffers(0, 1, &outState->vCBuffer);
 	d3d11Ctx->PSGetConstantBuffers(0, 1, &outState->pCBuffer);
 	d3d11Ctx->IAGetInputLayout(&outState->iLayout);
@@ -199,7 +199,7 @@ bool Mesh::ResetDriverResources()
 			void* pVertices;
 			if (SUCCEEDED(subset.d3d9VBuffer->Lock(0, dataLength, (void**)&pVertices, D3DLOCK_DISCARD)))
 			{
-				memcpy(pVertices, subset.vertices.data(), dataLength);
+				std::memcpy(pVertices, subset.vertices.data(), dataLength);
 				subset.d3d9VBuffer->Unlock();
 			}
 			else
@@ -224,7 +224,7 @@ bool Mesh::ResetDriverResources()
 				void* pIndices;
 				if (SUCCEEDED(prim.d3d9IBuffer->Lock(0, dataLength, &pIndices, D3DLOCK_DISCARD)))
 				{
-					memcpy(pIndices, prim.indices.data(), dataLength);
+					std::memcpy(pIndices, prim.indices.data(), dataLength);
 					prim.d3d9IBuffer->Unlock();
 				}
 				else
@@ -428,7 +428,7 @@ bool GlobalContext::ResetDriver()
 		D3DLOCKED_RECT locked;
 		if (SUCCEEDED(d3d9DeformTex->LockRect(0, &locked, NULL, D3DLOCK_DISCARD)))
 		{
-			memset(locked.pBits, 0x0, locked.Pitch * MEX_BONE_TEX_SIZE);
+			std::memset(locked.pBits, 0x0, locked.Pitch * MEX_BONE_TEX_SIZE);
 			d3d9DeformTex->UnlockRect(0);
 		}
 
@@ -503,7 +503,7 @@ bool GlobalContext::ResetDriver()
 		D3D11_MAPPED_SUBRESOURCE mapped;
 		if (SUCCEEDED(d3d11Ctx->Map(d3d11DeformTex, 0, D3D11_MAP_WRITE_DISCARD, 0, &mapped)))
 		{
-			memset(mapped.pData, 0x0, mapped.RowPitch * texDesc.Height);
+			std::memset(mapped.pData, 0x0, mapped.RowPitch * texDesc.Height);
 			d3d11Ctx->Unmap(d3d11DeformTex, 0);
 		}
 		// -----
@@ -860,7 +860,7 @@ void RenderContext::DrawToSurface()
 			D3D11_MAPPED_SUBRESOURCE mapped;
 			if (SUCCEEDED(globalCtx->d3d11Ctx->Map(globalCtx->d3d11PCBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mapped)))
 			{
-				memcpy(mapped.pData, &cbPixel, sizeof(cbPixel));
+				std::memcpy(mapped.pData, &cbPixel, sizeof(cbPixel));
 				globalCtx->d3d11Ctx->Unmap(globalCtx->d3d11PCBuffer, 0);
 			}
 			globalCtx->d3d11Ctx->PSSetConstantBuffers(0, 1, &globalCtx->d3d11PCBuffer);
@@ -981,7 +981,7 @@ void RenderContext::PlatformDrawSubset(Mesh& mesh, const Subset& subset, const M
 		D3D11_MAPPED_SUBRESOURCE mapped;
 		if (SUCCEEDED(globalCtx->d3d11Ctx->Map(globalCtx->d3d11VCBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mapped)))
 		{
-			memcpy(mapped.pData, &cbVertex, sizeof(cbVertex));
+			std::memcpy(mapped.pData, &cbVertex, sizeof(cbVertex));
 			globalCtx->d3d11Ctx->Unmap(globalCtx->d3d11VCBuffer, 0);
 		}
 		globalCtx->d3d11Ctx->VSSetConstantBuffers(0, 1, &globalCtx->d3d11VCBuffer);

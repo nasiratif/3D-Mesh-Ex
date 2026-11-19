@@ -35,7 +35,7 @@ void FileCloseUFBX(void* user) { FileClose((File)user); }
 
 inline void CopyUFBXName(wchar* dest, const ufbx_string& src)
 {
-	memset(dest, L'\0', (MEX_MAX_NAME_CHARS + 1) * sizeof(*dest));
+	std::memset(dest, L'\0', (MEX_MAX_NAME_CHARS + 1) * sizeof(*dest));
 	for (uint32 i = 0; i < src.length; ++i)
 	{
 		if (i >= MEX_MAX_NAME_CHARS)
@@ -108,7 +108,7 @@ GlobalContext::~GlobalContext()
 uint32 GlobalContext::LoadMesh(const wchar* fileName)
 {
 	for (auto& mesh : meshes)
-		if (wcscmp(mesh.fileName, fileName) == 0)
+		if (std::wcscmp(mesh.fileName, fileName) == 0)
 			return (uint32)mesh.index; // already exists!
 
 	auto ret = MEX_UNDEFINED;
@@ -147,7 +147,7 @@ uint32 GlobalContext::LoadMesh(const wchar* fileName)
 	mesh = &meshes.emplace_back();
 	mesh->index = (int32)meshID;
 	mesh->globalCtx = this;
-	wcsncpy(mesh->fileName, fileName, MEX_MAX_FILENAME_CHARS);
+	std::wcsncpy(mesh->fileName, fileName, MEX_MAX_FILENAME_CHARS);
 	mesh->fileName[MEX_MAX_FILENAME_CHARS] = '\0'; // wcsncpy does not null-terminate if the string is larger than the buffer :(
 
 	// Parse bones:
@@ -544,7 +544,7 @@ bool GlobalContext::TextureExists(const Texture& texture, uint32& outID)
 	{
 		const auto& other = textures[i];
 		if (texture.imageID == MEX_UNDEFINED16 && other.imageID == MEX_UNDEFINED16 ?
-			wcscmp(texture.fileName, other.fileName) == 0 :
+			std::wcscmp(texture.fileName, other.fileName) == 0 :
 			texture.imageID == other.imageID)
 		{
 			outID = (uint32)i;
@@ -569,9 +569,9 @@ bool GlobalContext::NeedReset()
 RenderContext::RenderContext()
 {
 	MatrixIdentity(identityMatrix);
-	memset(boneTransforms, 0x0, sizeof(boneTransforms));
-	memset(boneTransformsNormal, 0x0, sizeof(boneTransformsNormal));
-	memset(currentSubsetDeforms, 0x0, sizeof(currentSubsetDeforms));
+	std::memset(boneTransforms, 0x0, sizeof(boneTransforms));
+	std::memset(boneTransformsNormal, 0x0, sizeof(boneTransformsNormal));
+	std::memset(currentSubsetDeforms, 0x0, sizeof(currentSubsetDeforms));
 }
 
 RenderContext::~RenderContext()
@@ -838,7 +838,7 @@ void RenderContext::ReplaceTexture(RunHeader* rhPtr, int32 textureID, const wcha
 		return;
 
 	Texture texture;
-	wcsncpy(texture.fileName, fileName, MEX_MAX_FILENAME_CHARS);
+	std::wcsncpy(texture.fileName, fileName, MEX_MAX_FILENAME_CHARS);
 	texture.fileName[MEX_MAX_FILENAME_CHARS] = L'\0';
 	texture.imageID = MEX_UNDEFINED16;
 
@@ -931,7 +931,7 @@ Subset* RenderContext::GetSubset(const wchar* name)
 	auto& mesh = globalCtx->GetMesh(meshID);
 
 	for (auto& subset : mesh.subsets)
-		if (wcscmp(subset.name, name) == 0)
+		if (std::wcscmp(subset.name, name) == 0)
 			return &subset;
 
 	return nullptr;
@@ -995,7 +995,7 @@ AnimClip* RenderContext::GetAnim(const wchar* name)
 	auto& mesh = globalCtx->GetMesh(meshID);
 
 	for (auto& anim : mesh.anims)
-		if (wcscmp(anim.name, name) == 0)
+		if (std::wcscmp(anim.name, name) == 0)
 			return &anim;
 
 	return nullptr;
@@ -1030,7 +1030,7 @@ Bone* RenderContext::GetBone(const wchar* name)
 	auto& mesh = globalCtx->GetMesh(meshID);
 
 	for (auto& bone : mesh.bones)
-		if (wcscmp(bone.name, name) == 0)
+		if (std::wcscmp(bone.name, name) == 0)
 			return &bone;
 
 	return nullptr;
@@ -1348,8 +1348,8 @@ void RenderContext::WriteBoneDeformTexture(Mesh& mesh, float32* dest, uint32 pit
 		auto destMatNormal = ((byte*)destMat) + (MEX_BONE_TEX_SIZE / 2) * pitch; // the normals will just reside halfway below
 		auto srcMat = boneTransform.rows;
 		auto srcMatNormal = boneTransformNormal.rows;
-		memcpy(destMat, srcMat, sizeof(boneTransform.rows));
-		memcpy(destMatNormal, srcMatNormal, sizeof(boneTransformNormal.rows));
+		std::memcpy(destMat, srcMat, sizeof(boneTransform.rows));
+		std::memcpy(destMatNormal, srcMatNormal, sizeof(boneTransformNormal.rows));
 	}
 }
 
@@ -1404,13 +1404,13 @@ int32 RenderContext::ScreenSpaceY(float32 y)
 
 void MeshEx::MatrixIdentity(Matrix& out)
 {
-	memset(&out, 0x0, sizeof(out));
+	std::memset(&out, 0x0, sizeof(out));
 	out.rows[0][0] = out.rows[1][1] = out.rows[2][2] = out.rows[3][3] = 1.0f;
 }
 
 void MeshEx::MatrixTranslation(float32 x, float32 y, float32 z, Matrix& out)
 {
-	memset(&out, 0x0, sizeof(out));
+	std::memset(&out, 0x0, sizeof(out));
 	out.rows[0][0] = 1.0f;
 	out.rows[0][3] = x;
 
@@ -1428,7 +1428,7 @@ void MeshEx::MatrixYaw(float32 angle, Matrix& out)
 	auto sine = Sin(angle);
 	auto cosine = Cos(angle);
 
-	memset(&out, 0x0, sizeof(out));
+	std::memset(&out, 0x0, sizeof(out));
 	out.rows[0][0] = cosine;
 	out.rows[0][2] = -sine;
 
@@ -1445,7 +1445,7 @@ void MeshEx::MatrixPitch(float32 angle, Matrix& out)
 	auto sine = Sin(angle);
 	auto cosine = Cos(angle);
 
-	memset(&out, 0x0, sizeof(out));
+	std::memset(&out, 0x0, sizeof(out));
 	out.rows[0][0] = 1.0f;
 
 	out.rows[1][1] = cosine;
@@ -1462,7 +1462,7 @@ void MeshEx::MatrixRoll(float32 angle, Matrix& out)
 	auto sine = Sin(angle);
 	auto cosine = Cos(angle);
 
-	memset(&out, 0x0, sizeof(out));
+	std::memset(&out, 0x0, sizeof(out));
 	out.rows[0][0] = cosine;
 	out.rows[0][1] = -sine;
 
@@ -1476,7 +1476,7 @@ void MeshEx::MatrixRoll(float32 angle, Matrix& out)
 
 void MeshEx::MatrixQuaternion(float32 w, float32 x, float32 y, float32 z, Matrix& out)
 {
-	memset(&out, 0x0, sizeof(out));
+	std::memset(&out, 0x0, sizeof(out));
 	out.rows[0][0] = (w * w) + (x * x) - (y * y) - (z * z);
 	out.rows[0][1] = (2.0f * x * y) - (2.0f * w * z);
 	out.rows[0][2] = (2.0f * x * z) + (2.0f * w * y);
@@ -1494,7 +1494,7 @@ void MeshEx::MatrixQuaternion(float32 w, float32 x, float32 y, float32 z, Matrix
 
 void MeshEx::MatrixScaling(float32 x, float32 y, float32 z, Matrix& out)
 {
-	memset(&out, 0x0, sizeof(out));
+	std::memset(&out, 0x0, sizeof(out));
 	out.rows[0][0] = x;
 	out.rows[1][1] = y;
 	out.rows[2][2] = z;
@@ -1552,7 +1552,7 @@ void MeshEx::MatrixPerspective(float32 fov, float32 aspectRatio, float32 nearCli
 {
 	auto focalLength = 1.0f / Tan(fov / 2.0f);
 
-	memset(&out, 0x0, sizeof(out));
+	std::memset(&out, 0x0, sizeof(out));
 	out.rows[0][0] = focalLength / aspectRatio;
 	out.rows[1][1] = focalLength;
 
@@ -1565,7 +1565,7 @@ void MeshEx::MatrixOrthographic(float32 fov, float32 aspectRatio, float32 nearCl
 {
 	auto focalLength = 1.0f / Tan(fov / 2.0f);
 
-	memset(&out, 0x0, sizeof(out));
+	std::memset(&out, 0x0, sizeof(out));
 	out.rows[0][0] = focalLength / aspectRatio;
 	out.rows[1][1] = focalLength;
 
